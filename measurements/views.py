@@ -4,7 +4,7 @@ from .serializers import MeasurementSerializer
 
 
 class MeasurementListCreate(generics.ListCreateAPIView):
-    queryset = Measurement.objects.all()[:10]
+    queryset = Measurement.objects.all().order_by('-value')[:10]
     serializer_class = MeasurementSerializer
 
     def perform_create(self, serializer):
