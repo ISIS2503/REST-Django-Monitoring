@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'measurements',
+    'measurementsNOSQL',
 ]
 
 MIDDLEWARE = [
@@ -75,16 +76,16 @@ WSGI_APPLICATION = 'monitoring.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'name_db',
-        'USER': 'user',
-        'PASSWORD': 'password',
-        'HOST': 'localhost',
-        'PORT': '',
-    }
-}
+#DATABASES = {
+##    'default': {
+#       'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#        'NAME': 'name_db',
+#        'USER': 'user',
+#        'PASSWORD': 'password',
+#        'HOST': 'localhost',
+#       'PORT': '',
+#    }
+#}
 
 
 # Password validation
@@ -124,3 +125,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# Mlab Config
+MLAB_USER = os.environ['MLAB_USER']
+MLAB_PASSWORD = os.environ['MLAB_PASSWORD']
+MONGO_DB = os.environ['MONGO_DB']
+DB_HOST = os.environ['DB_HOST']
+DB_PORT = os.environ['DB_PORT']
